@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +43,7 @@
           
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about-section.html">about</a>
+            <a class="nav-link" href="about-section.html">About</a>
           </li>
         </ul>
       </div>
@@ -49,15 +52,24 @@
 
   <!-- Page Content -->
   <div class="container">
-
     <div class="row">
-
       <div class="col-lg-3">
         
         <h1 class="my-4">Hexui beta produkt </h1>
         <div class="list-group">
-          <a href="produkt hgere" class="list-group-item">Køb ved at klikke her. </a>
-        
+          <form method="POST" action="https://shop.rexdigital.group/checkout">
+            <!-- Find "YOURCLIENTID" by going to your store, 
+                clicking on the cogwheel(bottom left), 
+                and clicking on the "developer tab". -->
+            <input name="DrI0B0QTwDxguAbI2aBdHEyuUSypVVWS" type="hidden" value="YOURCLIENTID"> 
+            
+            <!-- Now we'll add the products we want to add to the cart for the customer,
+                the plan id can be found by using the products api, or by navigating to,
+                your products in the shop, and looking at the plan 
+                (The place where you set the price). -->
+            <input name="products[0][plan_id]" type="hidden" value="1337"> 
+            <button type="submit">Go to checkout</button>
+        </form>
         </div>
 
       </div>
